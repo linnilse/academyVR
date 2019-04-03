@@ -10,6 +10,7 @@ import {
   VrButton
 } from 'react-360';
 import VideoModule from 'VideoModule';
+import Info from './info'
 
 export default class Room1 extends React.Component {
 
@@ -37,16 +38,15 @@ export default class Room1 extends React.Component {
       <View style={styles.panel}>
         <View style={styles.greetingBox2}>
           <Text style={styles.greeting2}>
-            Room1
+            Receptionen
           </Text>
         </View>
         <VrButton
           onClick={this.PlayVideo.bind(this)}
           style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Starta Videon
-          </Text>
+          <Info />
         </VrButton>
+
       </View>
     );
   }
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
   },
   greetingBox: {
     padding: 20,
-    backgroundColor: '#000000',
-    borderColor: '#639dda',
-    borderWidth: 2,
+    //backgroundColor: '#000000',
+    //borderColor: '#639dda',
+    //borderWidth: 2,
   },
   greeting: {
     fontSize: 30,
@@ -75,7 +75,9 @@ const styles = StyleSheet.create({
   },
   greeting2: {
     fontSize: 60,
-    color: '#047364',
+    //color: '#047364',
+    color: '#ffffff',
+
     fontWeight: 'bold'
   },
 });

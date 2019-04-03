@@ -19,7 +19,7 @@ function init(bundle, parent, options = {}) {
 
   //menu
   const menuPanel = new Surface(300, 500, Surface.SurfaceShape.Flat);
-  menuPanel.setAngle(0.5, 0);
+  menuPanel.setAngle(0.8, 0);
 
   r360.renderToSurface(
     r360.createRoot('Menu'),

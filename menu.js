@@ -11,6 +11,7 @@ import { subscribeMenu } from './hack/openMenu';
 import { rotate } from './hack/rotate';
 import { showSentiment } from './hack/showSentiment';
 import { showVideoWall } from './hack/showVideoWall';
+import { MediaAppTemplateInfoButton } from './components/infoButton'
 export default class Menu extends React.Component {
   constructor() {
     super();
@@ -52,27 +53,22 @@ export default class Menu extends React.Component {
 
 
       <View style={styles.panel}>
-        <VrButton
+        <Text style={{ color: '#000' }}>Navigering</Text>
+        <MediaAppTemplateInfoButton
           onClick={this.funcShowRoom.bind(this, 'Room1')}
-          style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Receptionen
-          </Text>
-        </VrButton>
-        <VrButton
+          onEnter={e => console.log(e)}
+          width={250}
+          text={"Receptionen"} />
+
+        <MediaAppTemplateInfoButton
           onClick={this.funcShowRoom.bind(this, 'Room2')}
-          style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Köket
-          </Text>
-        </VrButton>
-        <VrButton
+          width={250}
+          text={"Köket"} />
+        <MediaAppTemplateInfoButton
           onClick={this.funcShowRoom.bind(this, 'Room3')}
-          style={styles.greetingBox}>
-          <Text style={styles.greeting}>
-            Klassrummet
-          </Text>
-        </VrButton>
+          width={250}
+          text={"Klassrummet"} />
+
 
       </View>
     );
@@ -83,7 +79,7 @@ const styles = StyleSheet.create({
   panel: {
     // Fill the entire surface
     width: 300,
-    height: 500,
+    height: 300,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
@@ -92,8 +88,15 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#047364',
     minWidth: 250,
-    borderColor: '#fff',
-    borderWidth: 1,
+    //borderColor: '#fff',
+    //borderWidth: 1,
+    margin: 10,
+  },
+  greetingBox_focused: {
+    backgroundColor: "#ff0000"
+  },
+  greetingBox_hover: {
+    backgroundColor: "#00ff00"
   },
   greeting: {
     fontSize: 30,

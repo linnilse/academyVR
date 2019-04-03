@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   greeting2: {
     fontSize: 60,
-    color: '#047364',
+    color: '#ffffff',
     fontWeight: 'bold'
   },
 });
