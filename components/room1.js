@@ -44,7 +44,9 @@ export default class Room1 extends React.Component {
         <VrButton
           onClick={this.PlayVideo.bind(this)}
           style={styles.greetingBox}>
-          <Info />
+          <Info
+            translate={[0, -75, 0]}
+          />
         </VrButton>
 
       </View>

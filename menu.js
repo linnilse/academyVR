@@ -11,13 +11,14 @@ import { subscribeMenu } from './hack/openMenu';
 import { rotate } from './hack/rotate';
 import { showSentiment } from './hack/showSentiment';
 import { showVideoWall } from './hack/showVideoWall';
+import { showKaffeWall } from './hack/showKaffeWall';
 import { MediaAppTemplateInfoButton } from './components/infoButton'
 export default class Menu extends React.Component {
   constructor() {
     super();
     this.state = {
       showMenu: false,
-      showRoom: false
+      showRoom: 'Room1'
     }
   }
 
@@ -28,6 +29,7 @@ export default class Menu extends React.Component {
     this.showRoom(room)
     showSentiment(room);
     showVideoWall(room);
+    showKaffeWall(room);
   }
 
   handleToggleMenu() {

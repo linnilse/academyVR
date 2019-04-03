@@ -64,7 +64,7 @@ export default class Info extends React.Component {
         const AnimatedModel = Animated.createAnimatedComponent(Entity);
 
         return (
-            <VrButton style={styles.greetingBox}>
+            <View style={styles.greetingBox}>
                 <AmbientLight intensity={1.1} />
                 <PointLight style={{ color: '#047364', transform: [{ translate: [0, 400, 700] }] }} />
                 <AnimatedModel
@@ -74,7 +74,7 @@ export default class Info extends React.Component {
                         mtl: asset('info.mtl')
                     }}
                     style={{
-                        transform: [{ translate: [100, -75, 0] }, { scale: this.animatedValue }, { rotateX: '5deg', rotateY: '100deg' },
+                        transform: [{ translate: this.props.translate }, { scale: this.animatedValue }, { rotateX: '5deg', rotateY: '100deg' },
                         {
                             rotateY: this.state.spin.interpolate({
                                 inputRange: [0, 1],
@@ -85,7 +85,7 @@ export default class Info extends React.Component {
                     }}
                     wireframe={false}
                 />
-            </VrButton>
+            </View>
         );
     }
 };
@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
     },
     greetingBox: {
         padding: 60,
-        marginLeft: 100,
         //backgroundColor: '#000000',
         //borderColor: '#639dda',
         //borderWidth: 2,

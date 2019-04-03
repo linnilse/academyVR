@@ -6,27 +6,27 @@ import {
   View,
   VrButton
 } from 'react-360';
-import { subscribeVideo } from '../hack/showVideoWall';
-export default class VideoWall extends React.Component {
+import { subscribeKaffe } from '../hack/showKaffeWall';
+export default class KaffeWall extends React.Component {
   constructor() {
     super();
     this.state = {
-      showVideoWall: false
+      showKaffeWall: false
     }
   }
 
-  handleToggleVideoWall(room) {
+  handleToggleKaffeWall(room) {
     this.setState({
-      showVideoWall: room
+      showKaffeWall: room
     })
   }
 
   componentDidMount() {
-    subscribeVideo(this.handleToggleVideoWall.bind(this))
+    subscribeKaffe(this.handleToggleKaffeWall.bind(this))
   }
 
   render() {
-    if (this.state.showVideoWall !== 'Room3') {
+    if (this.state.showKaffeWall !== 'Room1') {
       return null;
     }
     return (
@@ -34,7 +34,7 @@ export default class VideoWall extends React.Component {
         <VrButton
           style={styles.greetingBox}>
           <Text style={styles.greeting}>
-            VideoWall
+            KaffeWall
           </Text>
         </VrButton>
       </View>

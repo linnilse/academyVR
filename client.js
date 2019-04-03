@@ -19,7 +19,7 @@ function init(bundle, parent, options = {}) {
 
   //menu
   const menuPanel = new Surface(300, 500, Surface.SurfaceShape.Flat);
-  menuPanel.setAngle(0.8, 0);
+  menuPanel.setAngle(0.6, 0);
 
   r360.renderToSurface(
     r360.createRoot('Menu'),
@@ -33,6 +33,15 @@ function init(bundle, parent, options = {}) {
   r360.renderToSurface(
     r360.createRoot('Sentiment'),
     sentimentPanel,
+  );
+
+  //kaffe i rum 1
+  const KaffePanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  KaffePanel.setAngle(-1.5, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('KaffeWall'),
+    KaffePanel,
   );
 
   //videoWall
@@ -55,7 +64,7 @@ function init(bundle, parent, options = {}) {
   // Creating a Video Player
   const player = r360.compositor.createVideoPlayer('myplayer');
   console.log(player.setSource);
-  player.setSource(r360.getAssetURL('video.mp4'), false, 'mp4');
+  player.setSource(r360.getAssetURL('VR-vid_1.mp4'), false, 'mp4');
 
   //player.play();
   //r360.compositor.setBackgroundVideo('myplayer');

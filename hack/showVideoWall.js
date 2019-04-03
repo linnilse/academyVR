@@ -1,6 +1,6 @@
 let _showVideoWall;
 
-export const subscribeSentiment = (showVideoWall) => {
+export const subscribeVideo = (showVideoWall) => {
   _showVideoWall = showVideoWall;
 };
 

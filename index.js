@@ -18,6 +18,7 @@ import { addArticle } from "./actions/index";
 import { getMenu } from './hack/openMenu';
 import { subscribe } from './hack/rotate';
 import VideoWall from './components/videoWall';
+import KaffeWall from './components/kaffeWall';
 window.store = store;
 window.addArticle = addArticle;
 
@@ -120,3 +121,4 @@ AppRegistry.registerComponent('academyVR_1', () => academyVR_1);
 AppRegistry.registerComponent('Menu', () => Menu);
 AppRegistry.registerComponent('Sentiment', () => Sentiment);
 AppRegistry.registerComponent('VideoWall', () => VideoWall);
+AppRegistry.registerComponent('KaffeWall', () => KaffeWall);
