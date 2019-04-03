@@ -22,7 +22,7 @@ export default class Room3 extends React.Component {
       <View style={styles.panel}>
         <View style={styles.greetingBox}>
           <Text style={styles.greeting2}>
-            Klassrummet
+            Klassrummet hej hej hej hej hej
           </Text>
         </View>
       </View>
