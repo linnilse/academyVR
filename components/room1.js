@@ -35,8 +35,8 @@ export default class Room1 extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting}>
+        <View style={styles.greetingBox2}>
+          <Text style={styles.greeting2}>
             Room1
           </Text>
         </View>
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     // Fill the entire surface
     width: 1000,
     height: 600,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    justifyContent: 'center',
+    //backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    //justifyContent: 'center',
     alignItems: 'center',
   },
   greetingBox: {
@@ -69,6 +69,14 @@ const styles = StyleSheet.create({
   },
   greeting: {
     fontSize: 30,
+  },
+  greetingBox2: {
+    padding: 20,
+  },
+  greeting2: {
+    fontSize: 60,
+    color: '#047364',
+    fontWeight: 'bold'
   },
 });
 

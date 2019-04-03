@@ -9,6 +9,8 @@ import {
 
 import { subscribeMenu } from './hack/openMenu';
 import { rotate } from './hack/rotate';
+import { showSentiment } from './hack/showSentiment';
+import { showVideoWall } from './hack/showVideoWall';
 export default class Menu extends React.Component {
   constructor() {
     super();
@@ -19,12 +21,12 @@ export default class Menu extends React.Component {
   }
 
   funcShowRoom(room) {
-    console.log('ShowRoom')
     this.setState({
       showRoom: room
     })
     this.showRoom(room)
-
+    showSentiment(room);
+    showVideoWall(room);
   }
 
   handleToggleMenu() {
@@ -38,7 +40,6 @@ export default class Menu extends React.Component {
   }
 
   showRoom(room) {
-    console.log('rotate')
     rotate(room);
   }
 
@@ -55,21 +56,21 @@ export default class Menu extends React.Component {
           onClick={this.funcShowRoom.bind(this, 'Room1')}
           style={styles.greetingBox}>
           <Text style={styles.greeting}>
-            Room1
+            Receptionen
           </Text>
         </VrButton>
         <VrButton
           onClick={this.funcShowRoom.bind(this, 'Room2')}
           style={styles.greetingBox}>
           <Text style={styles.greeting}>
-            Room2
+            Köket
           </Text>
         </VrButton>
         <VrButton
           onClick={this.funcShowRoom.bind(this, 'Room3')}
           style={styles.greetingBox}>
           <Text style={styles.greeting}>
-            Room3
+            Klassrummet
           </Text>
         </VrButton>
 
@@ -89,12 +90,16 @@ const styles = StyleSheet.create({
   },
   greetingBox: {
     padding: 20,
-    backgroundColor: '#000000',
-    borderColor: '#639dda',
-    borderWidth: 2,
+    backgroundColor: '#047364',
+    minWidth: 250,
+    borderColor: '#fff',
+    borderWidth: 1,
   },
   greeting: {
     fontSize: 30,
+    color: 'white',
+    fontWeight: 'bold'
   },
+
 });
 

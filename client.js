@@ -17,20 +17,40 @@ function init(bundle, parent, options = {}) {
 
   console.log(r360);
 
+  //menu
+  const menuPanel = new Surface(300, 500, Surface.SurfaceShape.Flat);
+  menuPanel.setAngle(0.5, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('Menu'),
+    menuPanel,
+  );
+
+  //sentimental analysis
+  const sentimentPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  sentimentPanel.setAngle(-1.5, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('Sentiment'),
+    sentimentPanel,
+  );
+
+  //videoWall
+  const videoWallPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  videoWallPanel.setAngle(-3, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('VideoWall'),
+    videoWallPanel,
+  );
+
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
     r360.createRoot('academyVR_1', { /**/ }),
     r360.getDefaultSurface()
   );
 
-  const leftPanel = new Surface(300, 500, Surface.SurfaceShape.Flat);
-  leftPanel.setAngle(-1, 0);
 
-
-  r360.renderToSurface(
-    r360.createRoot('Menu'),
-    leftPanel,
-  );
 
   // Creating a Video Player
   const player = r360.compositor.createVideoPlayer('myplayer');
@@ -40,7 +60,7 @@ function init(bundle, parent, options = {}) {
   //player.play();
   //r360.compositor.setBackgroundVideo('myplayer');
   // Load the initial environment
-  r360.compositor.setBackground(r360.getAssetURL('360_world.jpg'));
+  r360.compositor.setBackground(r360.getAssetURL('academy2.jpg'));
   //r360.start();
 }
 
