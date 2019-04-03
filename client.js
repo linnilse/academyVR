@@ -37,7 +37,7 @@ function init(bundle, parent, options = {}) {
 
   //kaffe i rum 1
   const KaffePanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
-  KaffePanel.setAngle(-1.5, 0);
+  KaffePanel.setAngle(-2.6, 0);
 
   r360.renderToSurface(
     r360.createRoot('KaffeWall'),

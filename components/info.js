@@ -93,14 +93,6 @@ export default class Info extends React.Component {
 
 
 const styles = StyleSheet.create({
-    panel: {
-        // Fill the entire surface
-        width: 1000,
-        height: 600,
-        backgroundColor: 'rgba(255, 255, 255, 0.4)',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     greetingBox: {
         padding: 60,
         //backgroundColor: '#000000',

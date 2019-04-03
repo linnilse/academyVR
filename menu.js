@@ -22,6 +22,7 @@ export default class Menu extends React.Component {
     }
   }
 
+
   funcShowRoom(room) {
     this.setState({
       showRoom: room
@@ -38,19 +39,20 @@ export default class Menu extends React.Component {
     })
   }
 
-  componentDidMount() {
-    subscribeMenu(this.handleToggleMenu.bind(this))
-  }
-
   showRoom(room) {
     rotate(room);
   }
 
+  componentDidMount() {
+    subscribeMenu(this.handleToggleMenu.bind(this));
+    //this.funcShowRoom.call(this, 'Room1');
+  }
   render() {
     if (!this.state.showMenu) {
       console.log('not showing')
       return null;
     }
+
     return (
 
 

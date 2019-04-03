@@ -19,6 +19,7 @@ import { getMenu } from './hack/openMenu';
 import { subscribe } from './hack/rotate';
 import VideoWall from './components/videoWall';
 import KaffeWall from './components/kaffeWall';
+import { showKaffeWall } from './hack/showKaffeWall';
 window.store = store;
 window.addArticle = addArticle;
 
@@ -47,11 +48,13 @@ export default class academyVR_1 extends React.Component {
     })
   }
 
-  funcShowRoom() {
+  funcShowRoom(room) {
     this.showMenu()
     this.setState({
       showRoom: 'Room1'
     })
+    showKaffeWall(room);
+
   }
 
   componentDidMount() {
@@ -70,7 +73,7 @@ export default class academyVR_1 extends React.Component {
           </Text>
             </View>
             <VrButton
-              onClick={this.funcShowRoom.bind(this)}
+              onClick={this.funcShowRoom.bind(this, 'Room1')}
               style={styles.greetingBox}>
               <Text style={styles.greeting}>
                 Starta

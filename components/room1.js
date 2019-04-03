@@ -33,6 +33,11 @@ export default class Room1 extends React.Component {
     VideoModule.resume('myplayer'); // Start playback
     VideoModule.seek('myplayer', 12000000);
   }
+
+  componentWillUnmount() {
+    VideoModule.resume('myplayer'); // Start playback
+    VideoModule.seek('myplayer', 12000000);
+  }
   render() {
     return (
       <View style={styles.panel}>
