@@ -7,11 +7,13 @@ import {
   VideoModule,
   staticResourceURL,
 } from 'react-360-web';
+import KeyboardModule from 'react-360-keyboard/KeyboardModule';
 
 function init(bundle, parent, options = {}) {
   const r360 = new ReactInstance(bundle, parent, {
     // Add custom options here
     fullScreen: true,
+    nativeModules: [KeyboardModule.addModule],
     ...options,
   });
 
@@ -71,6 +73,7 @@ function init(bundle, parent, options = {}) {
   // Load the initial environment
   r360.compositor.setBackground(r360.getAssetURL('academy2.jpg'));
   //r360.start();
+  KeyboardModule.setInstance(r360);
 }
 
 
