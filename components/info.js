@@ -65,8 +65,8 @@ export default class Info extends React.Component {
 
         return (
             <View style={styles.greetingBox}>
-                <AmbientLight intensity={1.1} />
-                <PointLight style={{ color: '#047364', transform: [{ translate: [0, 400, 700] }] }} />
+                <AmbientLight intensity={0.6} />
+                <PointLight style={{ color: '#ffffff', transform: [{ translate: [0, -100, -100] }] }} />
                 <AnimatedModel
                     lit
                     source={{

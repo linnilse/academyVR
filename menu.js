@@ -12,6 +12,7 @@ import { rotate } from './hack/rotate';
 import { showSentiment } from './hack/showSentiment';
 import { showVideoWall } from './hack/showVideoWall';
 import { showKaffeWall } from './hack/showKaffeWall';
+import { showPingisWall } from './hack/showPingisWall';
 import { MediaAppTemplateInfoButton } from './components/infoButton'
 export default class Menu extends React.Component {
   constructor() {
@@ -31,6 +32,7 @@ export default class Menu extends React.Component {
     showSentiment(room);
     showVideoWall(room);
     showKaffeWall(room);
+    showPingisWall(room);
   }
 
   handleToggleMenu() {

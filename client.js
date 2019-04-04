@@ -55,6 +55,15 @@ function init(bundle, parent, options = {}) {
     videoWallPanel,
   );
 
+  //PingisWall
+  const PingisWallPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  PingisWallPanel.setAngle(-3.1, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('PingisWall'),
+    PingisWallPanel,
+  );
+
   // Render your app content to the default cylinder surface
   r360.renderToSurface(
     r360.createRoot('academyVR_1', { /**/ }),
@@ -63,10 +72,15 @@ function init(bundle, parent, options = {}) {
 
 
 
-  // Creating a Video Player
+  // 360 videoplayer
   const player = r360.compositor.createVideoPlayer('myplayer');
   console.log(player.setSource);
   player.setSource(r360.getAssetURL('VR-vid_1.mp4'), false, 'mp4');
+
+  // 2d videoplayer
+  const player2 = r360.compositor.createVideoPlayer('myplayer2');
+  console.log(player2.setSource);
+  player2.setSource(r360.getAssetURL('video2d.mp4'), false, 'mp4');
 
   //player.play();
   //r360.compositor.setBackgroundVideo('myplayer');
