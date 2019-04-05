@@ -13,6 +13,7 @@ export default class PingisWall extends React.Component {
   constructor() {
     super();
     this.animatedValue = new Animated.Value(0)
+    this.animatedValue2 = new Animated.Value(0)
     this.state = {
       showPingisWall: false,
       showPingisText: false,
@@ -27,10 +28,24 @@ export default class PingisWall extends React.Component {
   }
 
   handleTogglePingisInfo() {
+    this.animatedValue = new Animated.Value(0)
+    this.animatedValue2 = new Animated.Value(0)
     this.setState({
       showPingisText: !this.state.showPingisText,
-
     })
+
+    Animated.parallel([
+      Animated.timing(this.animatedValue, {
+        toValue: 40,
+        duration: 400
+      }),
+      Animated.timing(this.animatedValue2, {
+        toValue: 20,
+        duration: 400
+      })
+    ]).start(() => {
+      // callback
+    });
   }
 
   componentDidMount() {
@@ -38,21 +53,29 @@ export default class PingisWall extends React.Component {
   }
 
   render() {
+    const AnimatedView = Animated.createAnimatedComponent(View);
+    const AnimatedText = Animated.createAnimatedComponent(Text);
     if (this.state.showPingisWall !== 'Room2') {
       return null;
     }
     return (
       <View style={styles.panel}>
-        {this.state.showPingisText == false ? <View style={{ marginTop: 200 }}></View> :
-          <View style={styles.greetingBox2}>
-            <Text style={styles.greeting2}>
-              Pingis är också viktigt!
-          </Text>
-            <Text style={styles.greeting}>
-              Vinnare i år: Javascript!
-          </Text>
-          </View>
-        }
+        <View style={{ minHeight: 250, minWidth: 600, position: 'relative' }}>
+          {this.state.showPingisText == false ? <View style={{ marginTop: 200 }}></View> :
+            <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
+              <VrButton onClick={this.handleTogglePingisInfo.bind(this)}>
+                <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364' }}>
+                  <AnimatedText style={{ fontSize: this.animatedValue, color: '#fff' }}>
+                    Pingis är också viktigt!
+                  </AnimatedText>
+                  <AnimatedText style={{ fontSize: this.animatedValue2, color: '#fff' }}>
+                    Vinnare i år: JavaScript
+                  </AnimatedText>
+                </AnimatedView>
+              </VrButton>
+            </AnimatedView>
+          }
+        </View>
         <VrButton
           onClick={this.handleTogglePingisInfo.bind(this)}
           style={styles.greetingBox}>
@@ -72,34 +95,10 @@ const styles = StyleSheet.create({
     // Fill the entire surface
     width: 1000,
     height: 600,
-    //backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    //justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
+    alignItems: 'center'
   },
   greetingBox: {
     padding: 20,
-    //backgroundColor: '#000000',
-    //borderColor: '#639dda',
-    //borderWidth: 2,
-  },
-  greeting: {
-    fontSize: 30,
-    color: '#ffffff',
-    borderColor: '#ffffff'
-  },
-  greetingBox2: {
-    padding: 20,
-    marginRight: 20,
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
-    marginTop: 100,
-  },
-  greeting2: {
-    fontSize: 60,
-    //color: '#047364',
-    color: '#ffffff',
-
-    fontWeight: 'bold'
-  },
+  }
 });
 

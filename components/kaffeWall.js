@@ -77,8 +77,8 @@ export default class KaffeWall extends React.Component {
             />
           </View>
         </VrButton>
+      </View>
 
-      </View >
     );
   }
 };
