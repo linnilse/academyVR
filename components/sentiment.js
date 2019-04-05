@@ -11,6 +11,7 @@ import {
 import { subscribeSentiment } from '../hack/showSentiment';
 import { registerKeyboard } from 'react-360-keyboard';
 import { afinn } from './afinn111';
+import { MediaAppTemplateInfoButton } from './infoButton';
 
 AppRegistry.registerComponent(...registerKeyboard);
 
@@ -83,13 +84,13 @@ export default class Sentiment extends React.Component {
     return (
       <View style={styles.panel}>
 
-        <VrButton
-          style={styles.greetingBox}
-          onClick={this.onClickShowKeyboard.bind(this)}>
-          <Text style={styles.greeting}>
-            Sentiment
-          </Text>
-        </VrButton>
+        <MediaAppTemplateInfoButton
+          onClick={this.onClickShowKeyboard.bind(this)}
+          text={"Say something .."}
+          width={250}
+        />
+
+
         <View style={[
           styles.placeholder,
           {
@@ -111,23 +112,17 @@ export default class Sentiment extends React.Component {
 const styles = StyleSheet.create({
   panel: {
     // Fill the entire surface
-    width: 1000,
-    height: 600,
+    minWidth: 500,
+    minHeight: 270,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   placeholder: {
-    display: 'flex',
-    width: 700,
-    height: 300,
-    backgroundColor: '#fff',
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-    borderWidth: 2,
-    flexDirection: 'column',
+    backgroundColor: '#047364',
+    minWidth: 460,
+    minHeight: 170
   },
   placeholderText: {
     fontSize: 40,
@@ -137,14 +132,20 @@ const styles = StyleSheet.create({
     color: '#000',
 
   },
-  greetingBox: {
-    padding: 20,
-    backgroundColor: '#000000',
-    borderColor: '#639dda',
-    borderWidth: 2,
-  },
+
   greeting: {
     fontSize: 30,
+    backgroundColor: '#047364',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#333333',
+    borderWidth: 2,
+    borderRadius: 5,
+    flexDirection: 'row',
+    height: 60,
+    borderRightWidth: 5,
+    borderBottomWidth: 5,
+    marginBottom: 10,
   },
   textAreaContainer: {
     width: 700,
