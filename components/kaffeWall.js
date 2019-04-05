@@ -52,16 +52,21 @@ export default class KaffeWall extends React.Component {
     }
     return (
       <View style={styles.panel}>
+
         <View style={{ minHeight: 250, minWidth: 500, position: 'relative' }}>
           {this.state.showKaffeText == false ? <View style={{ marginTop: 200 }}></View> :
-            <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
-              <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364' }}>
-                <AnimatedText style={{ fontSize: this.animatedValue, color: '#fff' }}>
-                  Kaffe är viktigt!
-          </AnimatedText>
-              </AnimatedView>
-            </AnimatedView>}
 
+            <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
+              <VrButton onClick={this.handleToggleKaffeInfo.bind(this)}>
+                <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364' }}>
+                  <AnimatedText style={{ fontSize: this.animatedValue, color: '#fff' }}>
+                    Kaffe är viktigt!
+          </AnimatedText>
+                </AnimatedView>
+              </VrButton>
+            </AnimatedView>
+
+          }
         </View>
         <VrButton
           onClick={this.handleToggleKaffeInfo.bind(this)}
