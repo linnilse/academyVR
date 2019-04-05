@@ -38,7 +38,7 @@ function init(bundle, parent, options = {}) {
   );
 
   //sentimental analysis
-  const sentimentPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  const sentimentPanel = new Surface(500, 270, Surface.SurfaceShape.Flat);
   sentimentPanel.setAngle(-1.5, 0);
 
   r360.renderToSurface(

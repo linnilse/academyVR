@@ -24,6 +24,7 @@ import VideoWall from './components/videoWall';
 import KaffeWall from './components/kaffeWall';
 import PingisWall from './components/pingisWall';
 import { showKaffeWall } from './hack/showKaffeWall';
+import { MediaAppTemplateInfoButton } from './components/infoButton';
 window.store = store;
 window.addArticle = addArticle;
 
@@ -95,13 +96,11 @@ export default class academyVR_1 extends React.Component {
                 Welcome to Academy
           </Text>
             </View>
-            <VrButton
+            <MediaAppTemplateInfoButton
               onClick={this.funcShowRoom.bind(this, 'Room1')}
-              style={styles.greetingBox}>
-              <Text style={styles.greeting}>
-                Starta
-          </Text>
-            </VrButton>
+              text={"Starta"}
+              width={250}
+            />
           </View>
           : activeRoom}
       </View>
