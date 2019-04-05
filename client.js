@@ -46,7 +46,7 @@ function init(bundle, parent, options = {}) {
     sentimentPanel,
   );
 
-  //kaffe i rum 1
+  //kaffe i rum 1 
   const KaffePanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
   KaffePanel.setAngle(-2.6, 0);
 

@@ -58,10 +58,13 @@ export default class Sentiment extends React.Component {
 
 
       let { score } = this.state;
+      let komp = score2 / words.length
+
       this.setState({
         score: score2,
-        comparative: score2 / words.length
+        comparative: komp.toFixed(2)
       });
+
     });
   }
 
@@ -121,10 +124,10 @@ const styles = StyleSheet.create({
 
   placeholder: {
     backgroundColor: '#047364',
-    paddingLeft: 80,
-    paddingRight: 80,
-    paddingBottom: 20,
-    paddingTop: 20
+    paddingLeft: 100,
+    paddingRight: 100,
+    paddingBottom: 30,
+    paddingTop: 30
   },
   placeholderText: {
     fontSize: 40,
