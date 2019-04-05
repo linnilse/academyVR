@@ -131,8 +131,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     textAlign: 'center',
     marginLeft: 20,
-    color: '#000',
-
+    color: '#fff',
   },
 
   greeting: {
