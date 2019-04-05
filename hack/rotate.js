@@ -5,6 +5,5 @@ export const subscribe = (onRotate) => {
 };
 
 export const rotate = (room) => {
-  console.log('rotate2')
   _onRotate(room);
 }

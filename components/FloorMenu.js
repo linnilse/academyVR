@@ -10,7 +10,9 @@ import {
   asset
 } from 'react-360';
 import { subscribeFloorMenu } from '../hack/showFloorMenu';
+import { rotate } from '../hack/rotate';
 import Info from './info';
+import { showKaffeWall } from '../hack/showKaffeWall';
 export default class FloorMenu extends React.Component {
   constructor() {
     super();
@@ -26,6 +28,18 @@ export default class FloorMenu extends React.Component {
     })
   }
 
+  funcShowRoom(room) {
+    this.showRoom(room)
+    this.setState({
+      showFloorMenu: room
+    })
+    showKaffeWall(room);
+  }
+
+  showRoom(room) {
+    rotate(room);
+  }
+
   componentDidMount() {
     subscribeFloorMenu(this.handleToggleFloorMenu.bind(this))
   }
@@ -37,7 +51,7 @@ export default class FloorMenu extends React.Component {
     }
     return (
       <View style={styles.panel}>
-        <VrButton onClick={() => { console.log('floor clickt') }} style={{
+        <VrButton onClick={this.funcShowRoom.bind(this, 'Room4')} style={{
           padding: 20, position: 'relative', top: 300,
         }}>
           <View>
