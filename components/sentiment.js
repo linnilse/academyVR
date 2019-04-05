@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -13,34 +14,55 @@ import { afinn } from './afinn111';
 
 AppRegistry.registerComponent(...registerKeyboard);
 
+const data = [
+  { name: 'Group A', value: 400 },
+  { name: 'Group B', value: 300 },
+  { name: 'Group C', value: 300 },
+  { name: 'Group D', value: 200 },
+];
+
+
 
 export default class Sentiment extends React.Component {
   constructor() {
     super();
     this.state = {
       showSentiment: false,
-      // words = textInput.split(/\W/),
       score: 0,
-      words: ['angry'],
+      comparative: 0,
     }
-
   }
-
   onClickShowKeyboard() {
     // 4.) show the keyboard
     NativeModules.Keyboard.startInput({
       placeholder: 'Enter something...',
-      tintColor: '#ff0000'
+      tintColor: '#56b000'
     }).then(input => {
-      console.log(input, this);
+      console.log(input);
       /*let { words } = this.state;
       this.setState({ words: words });*/
+      let words = input.split(/\W/);
+
+      let scoredwords = [];
+      let score2 = 0;
+      console.log(score2 / words.length);
+
+      for (var i = 0; i < words.length; i++) {
+        var word = words[i].toLowerCase();
+        if (afinn.hasOwnProperty(word)) {
+          score2 += Number(afinn[word]);
+          scoredwords.push(word + ':' + score2);
+        }
+      }
+
+
       let { score } = this.state;
-      this.setState({ score: score + 5 });
+      this.setState({
+        score: score2,
+        comparative: score2 / words.length
+      });
     });
   }
-
-
 
   handleToggleSentiment(room) {
     this.setState({
@@ -65,7 +87,7 @@ export default class Sentiment extends React.Component {
           style={styles.greetingBox}
           onClick={this.onClickShowKeyboard.bind(this)}>
           <Text style={styles.greeting}>
-            Sentimental
+            Sentiment
           </Text>
         </VrButton>
         <View style={[
@@ -76,7 +98,8 @@ export default class Sentiment extends React.Component {
         ]}>
           <View >
             <Text style={styles.placeholderText}>score:{this.state.score}</Text>
-            <Text style={styles.placeholderText}>words:{this.state.words}</Text>
+            <Text style={styles.placeholderText}>comparative:{this.state.comparative}</Text>
+            {/* <Text style={styles.placeholderText}>words:{this.state.words}</Text> */}
           </View>
         </View>
 
