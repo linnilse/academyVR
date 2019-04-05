@@ -25,7 +25,7 @@ export default class Room2 extends React.Component {
 
     AudioModule.playEnvironmental({
       source: asset('Billiesong.mp3'),
-      volume: 0.1, // play at 3/10 original volume
+      volume: 0.4, // play at 3/10 original volume
 
     });
   }
