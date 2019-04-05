@@ -28,6 +28,15 @@ function init(bundle, parent, options = {}) {
     menuPanel,
   );
 
+  //Floormenu
+  const FloorPanel = new Surface(300, 500, Surface.SurfaceShape.Flat);
+  FloorPanel.setAngle(1, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('FloorMenu'),
+    FloorPanel,
+  );
+
   //sentimental analysis
   const sentimentPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
   sentimentPanel.setAngle(-1.5, 0);

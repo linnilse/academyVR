@@ -12,6 +12,7 @@ import { rotate } from './hack/rotate';
 import { showSentiment } from './hack/showSentiment';
 import { showVideoWall } from './hack/showVideoWall';
 import { showKaffeWall } from './hack/showKaffeWall';
+import { showFloorMenu } from './hack/showFloorMenu';
 import { showPingisWall } from './hack/showPingisWall';
 import { MediaAppTemplateInfoButton } from './components/infoButton'
 export default class Menu extends React.Component {
@@ -23,7 +24,6 @@ export default class Menu extends React.Component {
     }
   }
 
-
   funcShowRoom(room) {
     this.setState({
       showRoom: room
@@ -33,6 +33,7 @@ export default class Menu extends React.Component {
     showVideoWall(room);
     showKaffeWall(room);
     showPingisWall(room);
+    showFloorMenu(room);
   }
 
   handleToggleMenu() {
@@ -49,6 +50,7 @@ export default class Menu extends React.Component {
     subscribeMenu(this.handleToggleMenu.bind(this));
     //this.funcShowRoom.call(this, 'Room1');
   }
+
   render() {
     if (!this.state.showMenu) {
       console.log('not showing')
@@ -56,8 +58,6 @@ export default class Menu extends React.Component {
     }
 
     return (
-
-
       <View style={styles.panel}>
         <Text style={{ color: '#000' }}>Navigering</Text>
         <MediaAppTemplateInfoButton
@@ -74,8 +74,6 @@ export default class Menu extends React.Component {
           onClick={this.funcShowRoom.bind(this, 'Room3')}
           width={250}
           text={"Klassrummet"} />
-
-
       </View>
     );
   }

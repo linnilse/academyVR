@@ -12,7 +12,7 @@ export default class Room3 extends React.Component {
   componentDidMount() {
     Environment.setBackgroundImage(
       asset('klass3.jpg'), {
-        transition: 10,
+        transition: 300,
         fadeLevel: 1,
       }
     );
