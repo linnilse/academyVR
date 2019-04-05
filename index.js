@@ -47,6 +47,7 @@ export default class academyVR_1 extends React.Component {
   }
 
   ShowRoom(room) {
+    console.log('room: ' + room);
     this.setState({
       showRoom: room
     })
@@ -67,6 +68,23 @@ export default class academyVR_1 extends React.Component {
 
   }
   render() {
+    let activeRoom = <Room1 />;
+    switch (this.state.showRoom) {
+      case 'Room1':
+        activeRoom = <Room1 />;
+        break;
+      case 'Room2':
+        activeRoom = <Room2 />;
+        break;
+      case 'Room3':
+        activeRoom = <Room3 />;
+        break;
+      case 'Room4':
+        activeRoom = <Room4 />;
+        break;
+      default:
+        break;
+    }
 
     return (
       <View>
@@ -85,10 +103,7 @@ export default class academyVR_1 extends React.Component {
           </Text>
             </VrButton>
           </View>
-          : this.state.showRoom == 'Room1' ? <Room1 /> :
-            this.state.showRoom == 'Room2' ? <Room2 /> :
-              this.state.showRoom == 'Room3' ? <Room3 /> :
-                <Room4 />}
+          : activeRoom}
       </View>
     );
   }
