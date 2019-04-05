@@ -4,13 +4,15 @@ import {
   StyleSheet,
   Text,
   View,
-  VrButton
+  VrButton,
+  Animated,
 } from 'react-360';
 import { subscribePingisWall } from '../hack/showPingisWall';
 import Info from './info'
 export default class PingisWall extends React.Component {
   constructor() {
     super();
+    this.animatedValue = new Animated.Value(0)
     this.state = {
       showPingisWall: false,
       showPingisText: false,
