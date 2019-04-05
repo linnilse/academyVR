@@ -121,8 +121,10 @@ const styles = StyleSheet.create({
 
   placeholder: {
     backgroundColor: '#047364',
-    minWidth: 460,
-    minHeight: 170
+    paddingLeft: 80,
+    paddingRight: 80,
+    paddingBottom: 20,
+    paddingTop: 20
   },
   placeholderText: {
     fontSize: 40,
