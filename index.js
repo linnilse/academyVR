@@ -11,11 +11,14 @@ import {
 import Room1 from './components/room1'
 import Room2 from './components/room2'
 import Room3 from './components/room3'
+import Room4 from './components/room4'
 import Menu from './menu'
+import FloorMenu from './components/FloorMenu'
 import Sentiment from './components/sentiment'
 import store from "./store/index";
 import { addArticle } from "./actions/index";
 import { getMenu } from './hack/openMenu';
+import { showFloorMenu } from './hack/showFloorMenu';
 import { subscribe } from './hack/rotate';
 import VideoWall from './components/videoWall';
 import KaffeWall from './components/kaffeWall';
@@ -55,6 +58,7 @@ export default class academyVR_1 extends React.Component {
       showRoom: 'Room1'
     })
     showKaffeWall(room);
+    showFloorMenu(room);
 
   }
 
@@ -83,7 +87,8 @@ export default class academyVR_1 extends React.Component {
           </View>
           : this.state.showRoom == 'Room1' ? <Room1 /> :
             this.state.showRoom == 'Room2' ? <Room2 /> :
-              <Room3 />}
+              this.state.showRoom == 'Room3' ? <Room3 /> :
+                <Room4 />}
       </View>
     );
   }
@@ -127,3 +132,4 @@ AppRegistry.registerComponent('Sentiment', () => Sentiment);
 AppRegistry.registerComponent('VideoWall', () => VideoWall);
 AppRegistry.registerComponent('KaffeWall', () => KaffeWall);
 AppRegistry.registerComponent('PingisWall', () => PingisWall);
+AppRegistry.registerComponent('FloorMenu', () => FloorMenu);

@@ -22,10 +22,6 @@ export default class Room1 extends React.Component {
       volume: 1,
       muted: false,
     })
-    console.log('Environment', Environment);
-    console.log('VideoModule', VideoModule);
-
-
   }
 
   componentDidMount() {

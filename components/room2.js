@@ -14,7 +14,7 @@ export default class Room2 extends React.Component {
   componentDidMount() {
     Environment.setBackgroundImage(
       asset('köket2.jpg'), {
-        transition: 10,
+        transition: 300,
         fadeLevel: 1,
       }
     );
