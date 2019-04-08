@@ -23,7 +23,7 @@ export default class Menu extends React.Component {
     this.state = {
       showMenu: false,
       showRoom: 'Room1',
-      navigering: 'Navigering'
+      navigering: 'Receptionen'
     }
   }
 
