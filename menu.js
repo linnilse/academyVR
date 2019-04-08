@@ -14,6 +14,7 @@ import { showVideoWall } from './hack/showVideoWall';
 import { showKaffeWall } from './hack/showKaffeWall';
 import { showFloorMenu } from './hack/showFloorMenu';
 import { showPingisWall } from './hack/showPingisWall';
+import { showInstagram } from './hack/showInstagram';
 import { InfoButton } from './components/infoButton'
 export default class Menu extends React.Component {
   constructor() {
@@ -34,6 +35,7 @@ export default class Menu extends React.Component {
     showKaffeWall(room);
     showPingisWall(room);
     showFloorMenu(room);
+    showInstagram(room);
   }
 
   handleToggleMenu() {

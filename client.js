@@ -73,6 +73,15 @@ function init(bundle, parent, options = {}) {
     PingisWallPanel,
   );
 
+  //Instagram
+  const InstagramPanel = new Surface(1000, 1000, Surface.SurfaceShape.Flat);
+  InstagramPanel.setAngle(-2.1, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('Instagram'),
+    InstagramPanel,
+  );
+
   // Intro
   r360.renderToSurface(
     r360.createRoot('academyVR_1', { /**/ }),

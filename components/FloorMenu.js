@@ -13,6 +13,8 @@ import { subscribeFloorMenu } from '../hack/showFloorMenu';
 import { rotate } from '../hack/rotate';
 import Info from './info';
 import { showKaffeWall } from '../hack/showKaffeWall';
+import { showInstagram } from '../hack/showInstagram';
+
 export default class FloorMenu extends React.Component {
   constructor() {
     super();
@@ -33,7 +35,9 @@ export default class FloorMenu extends React.Component {
     this.setState({
       showFloorMenu: room
     })
-    showKaffeWall(room);
+
+    showKaffeWall(room);//så att kaffe inte syns i rum 4
+    showInstagram(room);
   }
 
   showRoom(room) {
