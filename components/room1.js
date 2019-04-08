@@ -37,14 +37,14 @@ export default class Room1 extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
-        <View style={styles.greetingBox2}>
-          <Text style={styles.greeting2}>
+        <View>
+          <Text style={styles.text}>
             Receptionen
           </Text>
         </View>
         <VrButton
           onClick={this.PlayVideo.bind(this)}
-          style={styles.greetingBox}>
+          style={styles.padding}>
           <Info
             translate={[0, -75, 0]}
           />
@@ -57,30 +57,16 @@ export default class Room1 extends React.Component {
 
 const styles = StyleSheet.create({
   panel: {
-    // Fill the entire surface
     width: 1000,
     height: 600,
-    //backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    //justifyContent: 'center',
     alignItems: 'center',
   },
-  greetingBox: {
-    padding: 20,
-    //backgroundColor: '#000000',
-    //borderColor: '#639dda',
-    //borderWidth: 2,
-  },
-  greeting: {
-    fontSize: 30,
-  },
-  greetingBox2: {
+  padding: {
     padding: 20,
   },
-  greeting2: {
+  text: {
     fontSize: 60,
-    //color: '#047364',
     color: '#ffffff',
-
     fontWeight: 'bold'
   },
 });

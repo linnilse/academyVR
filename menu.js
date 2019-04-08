@@ -14,7 +14,7 @@ import { showVideoWall } from './hack/showVideoWall';
 import { showKaffeWall } from './hack/showKaffeWall';
 import { showFloorMenu } from './hack/showFloorMenu';
 import { showPingisWall } from './hack/showPingisWall';
-import { MediaAppTemplateInfoButton } from './components/infoButton'
+import { InfoButton } from './components/infoButton'
 export default class Menu extends React.Component {
   constructor() {
     super();
@@ -60,17 +60,17 @@ export default class Menu extends React.Component {
     return (
       <View style={styles.panel}>
         <Text style={{ color: '#000' }}>Navigering</Text>
-        <MediaAppTemplateInfoButton
+        <InfoButton
           onClick={this.funcShowRoom.bind(this, 'Room1')}
           onEnter={e => console.log(e)}
           width={250}
           text={"Receptionen"} />
 
-        <MediaAppTemplateInfoButton
+        <InfoButton
           onClick={this.funcShowRoom.bind(this, 'Room2')}
           width={250}
           text={"Köket"} />
-        <MediaAppTemplateInfoButton
+        <InfoButton
           onClick={this.funcShowRoom.bind(this, 'Room3')}
           width={250}
           text={"Klassrummet"} />

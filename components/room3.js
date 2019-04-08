@@ -20,8 +20,8 @@ export default class Room3 extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting2}>
+        <View style={styles.padding}>
+          <Text style={styles.text}>
             Klassrummet
           </Text>
         </View>
@@ -38,10 +38,10 @@ const styles = StyleSheet.create({
     //backgroundColor: 'rgba(255, 255, 255, 0.4)',
     alignItems: 'center',
   },
-  greetingBox: {
+  padding: {
     padding: 20,
   },
-  greeting2: {
+  text: {
     fontSize: 60,
     color: '#ffffff',
     fontWeight: 'bold'

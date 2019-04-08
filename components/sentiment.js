@@ -11,7 +11,7 @@ import {
 import { subscribeSentiment } from '../hack/showSentiment';
 import { registerKeyboard } from 'react-360-keyboard';
 import { afinn } from './afinn111';
-import { MediaAppTemplateInfoButton } from './infoButton';
+import { InfoButton } from './infoButton';
 
 AppRegistry.registerComponent(...registerKeyboard);
 
@@ -78,7 +78,7 @@ export default class Sentiment extends React.Component {
     return (
       <View style={styles.panel}>
 
-        <MediaAppTemplateInfoButton
+        <InfoButton
           onClick={this.onClickShowKeyboard.bind(this)}
           text={"Say something .."}
           width={250}

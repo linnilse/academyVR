@@ -64,7 +64,7 @@ export default class Info extends React.Component {
         const AnimatedModel = Animated.createAnimatedComponent(Entity);
 
         return (
-            <View style={styles.greetingBox}>
+            <View style={styles.padding}>
                 <AmbientLight intensity={0.6} />
                 <PointLight style={{ color: '#ffffff', transform: [{ translate: [0, -100, -100] }] }} />
                 <AnimatedModel
@@ -93,13 +93,7 @@ export default class Info extends React.Component {
 
 
 const styles = StyleSheet.create({
-    greetingBox: {
+    padding: {
         padding: 60,
-        //backgroundColor: '#000000',
-        //borderColor: '#639dda',
-        //borderWidth: 2,
-    },
-    greeting: {
-        fontSize: 30,
     },
 });

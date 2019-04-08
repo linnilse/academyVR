@@ -44,7 +44,6 @@ export default class VideoWall extends React.Component {
     return (
       <View style={styles.panel}>
         <Video playerState={this.state.playerState} style={{ height: 600, width: 1000 }} source={asset('video2d.mp4')}>
-
         </Video>
         <View style={{ height: 100, width: 1000, marginBottom: 40, }}>
           <VideoControl playerState={this.state.playerState} />
@@ -62,15 +61,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 0, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  greetingBox: {
-    padding: 20,
-    backgroundColor: '#000000',
-    borderColor: '#639dda',
-    borderWidth: 2,
-  },
-  greeting: {
-    fontSize: 30,
   },
 });
 
