@@ -6,9 +6,14 @@ import {
   View,
   VrButton,
   Animated,
+  Image,
+  asset
 } from 'react-360';
 import { subscribeInstagram } from '../hack/showInstagram';
 import Info from './info'
+
+const API = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=40227231.83ecfe1.bddf343cf9d64e75a734c8eb6e78af3c';
+
 export default class Instagram extends React.Component {
   constructor() {
     super();
@@ -18,6 +23,7 @@ export default class Instagram extends React.Component {
       showInstagramWall: false,
       showInstagramText: false,
       translateInfo: -100,
+      data: [],
     }
   }
 
@@ -50,31 +56,46 @@ export default class Instagram extends React.Component {
 
   componentDidMount() {
     subscribeInstagram(this.handleToggleInstagramWall.bind(this))
+    this.populateAppWithData();
+  }
+
+  populateAppWithData() {
+    const showData = fetch(API)
+      .then(response => response.json())
+      .then(data => this.setState({ data: data.data }))
+    return showData;
+
   }
 
   render() {
+    console.log(this.state.data)
+    if (!this.state.data) {
+      return null;
+    }
+    const data = this.state.data
+      .slice()
+      .map((post, index) => (
+        <View style={{ width: 140 }}
+          key={'id' + post.id}
+        >
+          <Image style={{ width: 140, height: 140 }} source={{ uri: post.images.thumbnail.url }} />
 
+        </View>
+      ))
     const AnimatedView = Animated.createAnimatedComponent(View);
-    const AnimatedText = Animated.createAnimatedComponent(Text);
     if (this.state.showInstagramWall !== 'Room4') {
       return null;
     }
     return (
       <View style={styles.panel}>
 
-        <View style={{ minHeight: 250, minWidth: 600, position: 'relative' }}>
+        <View style={{ minHeight: 250, minWidth: 1000, position: 'relative' }}>
           {this.state.showInstagramText == false ? <View style={{ marginTop: 200 }}></View> :
             <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
               <VrButton onClick={this.handleToggleInstagramInfo.bind(this)}>
                 <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364' }}>
-                  <AnimatedText style={{ fontSize: this.animatedValue, color: '#fff' }}>
-                    Vi finns på instagram
-                  </AnimatedText>
-                  <AnimatedText style={{ fontSize: this.animatedValue2, color: '#fff' }}>
-                    Vinnare i år: JavaScript
-                  </AnimatedText>
+                  <View style={{ flexWrap: 'wrap', flexDirection: 'row', width: 700 }}>{data}</View>
                 </AnimatedView>
-
               </VrButton>
             </AnimatedView>
           }
