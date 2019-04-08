@@ -7,7 +7,6 @@ import {
   VrButton,
   Animated,
   Image,
-  asset
 } from 'react-360';
 import { subscribeInstagram } from '../hack/showInstagram';
 import Info from './info'
@@ -56,10 +55,11 @@ export default class Instagram extends React.Component {
 
   componentDidMount() {
     subscribeInstagram(this.handleToggleInstagramWall.bind(this))
-    this.populateAppWithData();
+    this.populateAppWithData()
   }
 
   populateAppWithData() {
+    console.log('hello');
     const showData = fetch(API)
       .then(response => response.json())
       .then(data => this.setState({ data: data.data }))
@@ -68,7 +68,6 @@ export default class Instagram extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
     if (!this.state.data) {
       return null;
     }
@@ -94,6 +93,7 @@ export default class Instagram extends React.Component {
             <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
               <VrButton onClick={this.handleToggleInstagramInfo.bind(this)}>
                 <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364' }}>
+                  <Text style={{ fontSize: 30, textAlign: 'center', paddingBottom: 10 }}>Kolla in oss på instagram @academy.se</Text>
                   <View style={{ flexWrap: 'wrap', flexDirection: 'row', width: 700 }}>{data}</View>
                 </AnimatedView>
               </VrButton>
