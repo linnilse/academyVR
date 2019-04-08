@@ -21,7 +21,8 @@ export default class Menu extends React.Component {
     super();
     this.state = {
       showMenu: false,
-      showRoom: 'Room1'
+      showRoom: 'Room1',
+      navigering: 'Navigering'
     }
   }
 
@@ -36,6 +37,25 @@ export default class Menu extends React.Component {
     showPingisWall(room);
     showFloorMenu(room);
     showInstagram(room);
+
+    if (room === "Room1") {
+      this.setState({
+        navigering: 'Receptionen'
+
+      })
+    }
+    if (room === "Room2") {
+      this.setState({
+        navigering: 'Köket'
+
+      })
+    }
+    if (room === "Room3") {
+      this.setState({
+        navigering: 'Klassrummet'
+
+      })
+    }
   }
 
   handleToggleMenu() {
@@ -55,13 +75,12 @@ export default class Menu extends React.Component {
 
   render() {
     if (!this.state.showMenu) {
-      console.log('not showing')
       return null;
     }
 
     return (
       <View style={styles.panel}>
-        <Text style={{ color: '#000' }}>Navigering</Text>
+        <Text style={{ color: '#000', fontWeight: 'bold' }}>{this.state.navigering}</Text>
         <InfoButton
           onClick={this.funcShowRoom.bind(this, 'Room1')}
           onEnter={e => console.log(e)}
