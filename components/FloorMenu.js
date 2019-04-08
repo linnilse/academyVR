@@ -14,6 +14,7 @@ import { rotate } from '../hack/rotate';
 import Info from './info';
 import { showKaffeWall } from '../hack/showKaffeWall';
 import { showInstagram } from '../hack/showInstagram';
+import { MenuShowRoom4 } from '../hack/showRoom4';
 
 export default class FloorMenu extends React.Component {
   constructor() {
@@ -38,6 +39,7 @@ export default class FloorMenu extends React.Component {
 
     showKaffeWall(room);//så att kaffe inte syns i rum 4
     showInstagram(room);
+    MenuShowRoom4(room)
   }
 
   showRoom(room) {
