@@ -7,7 +7,6 @@ import {
   Environment,
   asset,
 } from 'react-360';
-Environment.preloadBackgroundImage(asset('room3_o.jpg'))
 
 export default class Room4 extends React.Component {
 

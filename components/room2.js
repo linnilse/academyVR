@@ -10,7 +10,6 @@ import {
   NativeModules,
 } from 'react-360';
 const { AudioModule } = NativeModules;
-Environment.preloadBackgroundImage(asset('room3_o.jpg'))
 
 export default class Room2 extends React.Component {
 
