@@ -13,7 +13,7 @@ export default class Room4 extends React.Component {
 
   componentDidMount() {
     Environment.setBackgroundImage(
-      asset('köket2.jpg'), {
+      asset('rum4.jpg'), {
         transition: 300,
         fadeLevel: 1,
       }
