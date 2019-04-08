@@ -1,11 +1,3 @@
-/**
- * A simple component to use
- * Use "providesModule" so you can reference it from another file with
- * import MediaAppTemplateInfoButton from "MediaAppTemplateInfoButton.react"
- * @providesModule MediaAppTemplateInfoButton.react
- */
-'use strict';
-
 import React from 'react';
 import {
     StyleSheet,
@@ -21,14 +13,12 @@ import {
 
 const FOCUS_SCALE = 1.1;
 
-export class MediaAppTemplateInfoButton extends React.Component {
+export class InfoButton extends React.Component {
     static defaultProps = {
         width: 180,
         text: '',
     };
 
-    // This component has example to show how animation works
-    // You can check the doc: https://facebook.github.io/react-native/docs/0.49/animated#docsNav
     constructor(props) {
         super(props);
         this.state = {
@@ -71,18 +61,15 @@ export class MediaAppTemplateInfoButton extends React.Component {
                     { width: this.props.width * FOCUS_SCALE }
                 ]}>
                 <VrButton
-                    onClick={this._click} //this event trigger when click the view
-                    onExit={this._blur} //this event trigger when cursor move out of the view
-                    onEnter={this._focus} //this event trigger when cursor move into of the view
+                    onClick={this._click}
+                    onExit={this._blur}
+                    onEnter={this._focus}
                 >
                     <Animated.View
                         style={[
                             styles.button,
                             this.state.hasFocus && styles.buttonFocused,
                             {
-                                // With this the width of this view
-                                // is animated with the value of scaleAnim
-                                // by interpolation
                                 width: this.state.scaleAnim.interpolate({
                                     inputRange: [0, 1],
                                     outputRange: [this.props.width, this.props.width * FOCUS_SCALE],
@@ -143,5 +130,3 @@ const styles = StyleSheet.create({
         color: '#047364'
     }
 });
-
-//module.exports = MediaAppTemplateInfoButton;

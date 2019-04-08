@@ -12,7 +12,6 @@ import {
 const { AudioModule } = NativeModules;
 Environment.preloadBackgroundImage(asset('room3_o.jpg'))
 
-
 export default class Room2 extends React.Component {
 
   componentDidMount() {
@@ -25,7 +24,7 @@ export default class Room2 extends React.Component {
 
     AudioModule.playEnvironmental({
       source: asset('Billiesong.mp3'),
-      volume: 0.8, // play at 3/10 original volume
+      volume: 0.8,
 
     });
   }
@@ -36,9 +35,8 @@ export default class Room2 extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
-        {/* <Sound source={'Billiesong.mp3'}></Sound> */}
-        <View style={styles.greetingBox}>
-          <Text style={styles.greeting2}>
+        <View style={styles.padding}>
+          <Text style={styles.text}>
             Köket
           </Text>
 
@@ -50,16 +48,14 @@ export default class Room2 extends React.Component {
 
 const styles = StyleSheet.create({
   panel: {
-    // Fill the entire surface
     width: 1000,
     height: 600,
-    //backgroundColor: 'rgba(255, 255, 255, 0.4)',
     alignItems: 'center',
   },
-  greetingBox: {
+  padding: {
     padding: 20,
   },
-  greeting2: {
+  text: {
     fontSize: 60,
     color: '#ffffff',
     fontWeight: 'bold'

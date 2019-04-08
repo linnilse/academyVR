@@ -73,13 +73,11 @@ function init(bundle, parent, options = {}) {
     PingisWallPanel,
   );
 
-  // Render your app content to the default cylinder surface
+  // Intro
   r360.renderToSurface(
     r360.createRoot('academyVR_1', { /**/ }),
     r360.getDefaultSurface()
   );
-
-
 
   // 360 videoplayer
   const player = r360.compositor.createVideoPlayer('myplayer');
@@ -87,14 +85,9 @@ function init(bundle, parent, options = {}) {
   player.setSource(r360.getAssetURL('VR-vid_1.mp4'), false, 'mp4');
 
 
-  //player.play();
-  //r360.compositor.setBackgroundVideo('myplayer');
-  // Load the initial environment
-  r360.compositor.setBackground(r360.getAssetURL('academy2.jpg'));
-  //r360.start();
+  //default background
+  r360.compositor.setBackground(r360.getAssetURL('academy.jpg'));
   KeyboardModule.setInstance(r360);
 }
-
-
 
 window.React360 = { init };

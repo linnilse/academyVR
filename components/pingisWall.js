@@ -60,6 +60,7 @@ export default class PingisWall extends React.Component {
     }
     return (
       <View style={styles.panel}>
+
         <View style={{ minHeight: 250, minWidth: 600, position: 'relative' }}>
           {this.state.showPingisText == false ? <View style={{ marginTop: 200 }}></View> :
             <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
@@ -72,10 +73,13 @@ export default class PingisWall extends React.Component {
                     Vinnare i år: JavaScript
                   </AnimatedText>
                 </AnimatedView>
+
               </VrButton>
             </AnimatedView>
           }
+
         </View>
+
         <VrButton
           onClick={this.handleTogglePingisInfo.bind(this)}
           style={styles.greetingBox}>

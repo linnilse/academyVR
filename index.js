@@ -24,7 +24,7 @@ import VideoWall from './components/videoWall';
 import KaffeWall from './components/kaffeWall';
 import PingisWall from './components/pingisWall';
 import { showKaffeWall } from './hack/showKaffeWall';
-import { MediaAppTemplateInfoButton } from './components/infoButton';
+import { InfoButton } from './components/infoButton';
 window.store = store;
 window.addArticle = addArticle;
 
@@ -91,12 +91,12 @@ export default class academyVR_1 extends React.Component {
       <View>
         {this.state.showRoom == false ?
           <View style={styles.panel}>
-            <View style={styles.greetingBox2}>
-              <Text style={styles.greeting2}>
+            <View style={styles.padding}>
+              <Text style={styles.text}>
                 Welcome to Academy
           </Text>
             </View>
-            <MediaAppTemplateInfoButton
+            <InfoButton
               onClick={this.funcShowRoom.bind(this, 'Room1')}
               text={"Starta"}
               width={250}
@@ -110,30 +110,16 @@ export default class academyVR_1 extends React.Component {
 
 const styles = StyleSheet.create({
   panel: {
-    // Fill the entire surface
     width: 1000,
     height: 600,
-    //backgroundColor: 'rgba(255, 255, 255, 0.4)',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  greetingBox: {
+  padding: {
     padding: 20,
-    backgroundColor: '#047364',
-  },
-  greeting: {
-    fontSize: 30,
-    color: 'white',
-    fontWeight: 'bold'
-  },
-  greetingBox2: {
-    padding: 20,
-    //backgroundColor: '#000000',
-    //borderColor: '#639dda',
-    //borderWidth: 2,
 
   },
-  greeting2: {
+  text: {
     fontSize: 60,
     color: '#047364',
     fontWeight: 'bold'

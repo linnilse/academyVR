@@ -70,7 +70,7 @@ export default class KaffeWall extends React.Component {
         </View>
         <VrButton
           onClick={this.handleToggleKaffeInfo.bind(this)}
-          style={styles.greetingBox}>
+          style={styles.padding}>
           <View>
             <Info
               translate={[0, this.state.translateInfo, 0]}
@@ -85,34 +85,12 @@ export default class KaffeWall extends React.Component {
 
 const styles = StyleSheet.create({
   panel: {
-    // Fill the entire surface
     width: 1000,
     height: 600,
-    //backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    //justifyContent: 'center',
     alignItems: 'center',
   },
-  greetingBox: {
+  padding: {
     padding: 20,
-    //backgroundColor: '#000000',
-    //borderColor: '#639dda',
-    //borderWidth: 2,
-  },
-  greeting: {
-    fontSize: 30,
-  },
-  greetingBox2: {
-    padding: 20,
-    marginRight: 20,
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
-    marginTop: 100,
-  },
-  greeting2: {
-    fontSize: 60,
-    //color: '#047364',
-    color: '#ffffff',
-
-    fontWeight: 'bold'
   },
 });
 
