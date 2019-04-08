@@ -23,9 +23,9 @@ export default class Room4 extends React.Component {
     return (
       <View style={styles.panel}>
         <View style={styles.padding}>
-          <Text style={styles.text}>
+          {/* <Text style={styles.text}>
             Mysrummet
-          </Text>
+          </Text> */}
         </View>
       </View>
     );
