@@ -15,7 +15,8 @@ import { showKaffeWall } from './hack/showKaffeWall';
 import { showFloorMenu } from './hack/showFloorMenu';
 import { showPingisWall } from './hack/showPingisWall';
 import { showInstagram } from './hack/showInstagram';
-import { InfoButton } from './components/infoButton'
+import { subscribeMenuShowRoom4 } from './hack/showRoom4';
+import { InfoButton } from './components/infoButton';
 export default class Menu extends React.Component {
   constructor() {
     super();
@@ -56,6 +57,13 @@ export default class Menu extends React.Component {
 
       })
     }
+    if (room === "Room4") {
+      this.setState({
+        navigering: 'Guldkorn'
+
+      })
+    }
+
   }
 
   handleToggleMenu() {
@@ -70,7 +78,8 @@ export default class Menu extends React.Component {
 
   componentDidMount() {
     subscribeMenu(this.handleToggleMenu.bind(this));
-    //this.funcShowRoom.call(this, 'Room1');
+    subscribeMenuShowRoom4(this.funcShowRoom.bind(this))
+
   }
 
   render() {
