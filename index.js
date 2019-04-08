@@ -15,8 +15,6 @@ import Room4 from './components/room4'
 import Menu from './menu'
 import FloorMenu from './components/FloorMenu'
 import Sentiment from './components/sentiment'
-import store from "./store/index";
-import { addArticle } from "./actions/index";
 import { getMenu } from './hack/openMenu';
 import { showFloorMenu } from './hack/showFloorMenu';
 import { subscribe } from './hack/rotate';
@@ -26,11 +24,7 @@ import PingisWall from './components/pingisWall';
 import Instagram from './components/instagram';
 import { showKaffeWall } from './hack/showKaffeWall';
 import { InfoButton } from './components/infoButton';
-window.store = store;
-window.addArticle = addArticle;
 
-store.dispatch(addArticle('hej'));
-console.log(store.getState());
 
 
 
