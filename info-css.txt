@@ -1,3 +1,5 @@
+git subtree push --prefix build origin gh-pages
+
 alid style props: [
   "alignContent",
   "alignItems",
