@@ -24,6 +24,7 @@ import PingisWall from './components/pingisWall';
 import Instagram from './components/instagram';
 import { showKaffeWall } from './hack/showKaffeWall';
 import { InfoButton } from './components/infoButton';
+import PluggWall from './components/pluggWall';
 
 
 
@@ -129,3 +130,4 @@ AppRegistry.registerComponent('KaffeWall', () => KaffeWall);
 AppRegistry.registerComponent('PingisWall', () => PingisWall);
 AppRegistry.registerComponent('FloorMenu', () => FloorMenu);
 AppRegistry.registerComponent('Instagram', () => Instagram);
+AppRegistry.registerComponent('PluggWall', () => PluggWall);

@@ -10,27 +10,28 @@ import {
   NativeModules,
 } from 'react-360';
 const { AudioModule } = NativeModules;
+import VideoModule from 'VideoModule';
 
 export default class Room2 extends React.Component {
 
   componentDidMount() {
-    Environment.setBackgroundImage(
-      asset('köket2.jpg'), {
-        transition: 300,
-        fadeLevel: 1,
-      }
-    );
-
-    AudioModule.playEnvironmental({
+    Environment.setBackgroundVideo('myplayer2');
+    VideoModule.resume('myplayer2'); // Start playback
+    VideoModule.seek('myplayer2', 12000000);
+    AudioModule.playEnvironmental({ // Sound file
       source: asset('Billiesong.mp3'),
-      volume: 0.8,
-
+      volume: 0.4,
     });
   }
 
   componentWillUnmount() {
+    VideoModule.resume('myplayer2'); // Start playback
+    VideoModule.seek('myplayer2', 12000000);
     AudioModule.stopEnvironmental()
   }
+
+
+
   render() {
     return (
       <View style={styles.panel}>

@@ -8,7 +8,8 @@ import {
   Animated,
 } from 'react-360';
 import { subscribePingisWall } from '../hack/showPingisWall';
-import Info from './info'
+import Info from './info';
+import VideoModule from 'VideoModule';
 export default class PingisWall extends React.Component {
   constructor() {
     super();
@@ -26,8 +27,18 @@ export default class PingisWall extends React.Component {
       showPingisWall: room
     })
   }
+  PlayVideo() {
 
+    VideoModule.seek('myplayer2', 12);
+    VideoModule.resume('myplayer2'); // Start playback
+    VideoModule.setParams('myplayer2', {
+      volume: 1,
+      muted: false,
+    })
+  }
   handleTogglePingisInfo() {
+    this.PlayVideo();
+
     this.animatedValue = new Animated.Value(0)
     this.animatedValue2 = new Animated.Value(0)
     this.setState({

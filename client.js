@@ -72,6 +72,14 @@ function init(bundle, parent, options = {}) {
     r360.createRoot('PingisWall'),
     PingisWallPanel,
   );
+  //pluggWall
+  const PluggWallPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  PluggWallPanel.setAngle(2, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('PluggWall'),
+    PluggWallPanel,
+  );
 
   //Instagram
   const InstagramPanel = new Surface(1000, 1000, Surface.SurfaceShape.Flat);
@@ -92,6 +100,11 @@ function init(bundle, parent, options = {}) {
   const player = r360.compositor.createVideoPlayer('myplayer');
   console.log(player.setSource);
   player.setSource(r360.getAssetURL('VR-vid_1.mp4'), false, 'mp4');
+
+  // 360 videoplayer Kitchen
+  const player2 = r360.compositor.createVideoPlayer('myplayer2');
+  console.log(player2.setSource);
+  player2.setSource(r360.getAssetURL('Kitchen.mp4'), false, 'mp4');
 
 
   //default background

@@ -14,6 +14,7 @@ import { showVideoWall } from './hack/showVideoWall';
 import { showKaffeWall } from './hack/showKaffeWall';
 import { showFloorMenu } from './hack/showFloorMenu';
 import { showPingisWall } from './hack/showPingisWall';
+import { showPluggWall } from './hack/showPluggWall';
 import { showInstagram } from './hack/showInstagram';
 import { subscribeMenuShowRoom4 } from './hack/showRoom4';
 import { InfoButton } from './components/infoButton';
@@ -36,6 +37,7 @@ export default class Menu extends React.Component {
     showVideoWall(room);
     showKaffeWall(room);
     showPingisWall(room);
+    showPluggWall(room);
     showFloorMenu(room);
     showInstagram(room);
 
