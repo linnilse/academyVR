@@ -55,6 +55,15 @@ function init(bundle, parent, options = {}) {
     KaffePanel,
   );
 
+  //hallway i rum 1
+  const HallwayPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  HallwayPanel.setAngle(-1.1, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('Hallway'),
+    HallwayPanel,
+  );
+
   //videoWall
   const videoWallPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
   videoWallPanel.setAngle(-3, 0);
