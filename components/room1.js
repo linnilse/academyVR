@@ -38,9 +38,9 @@ export default class Room1 extends React.Component {
     return (
       <View style={styles.panel}>
         <View>
-          <Text style={styles.text}>
+          {/*  <Text style={styles.text}>
             Receptionen
-          </Text>
+          </Text> */}
         </View>
         <VrButton
           onClick={this.PlayVideo.bind(this)}

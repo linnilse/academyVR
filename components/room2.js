@@ -36,9 +36,9 @@ export default class Room2 extends React.Component {
     return (
       <View style={styles.panel}>
         <View style={styles.padding}>
-          <Text style={styles.text}>
+          {/* <Text style={styles.text}>
             Köket
-          </Text>
+          </Text> */}
 
         </View>
       </View>
