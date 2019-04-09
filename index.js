@@ -20,9 +20,11 @@ import { showFloorMenu } from './hack/showFloorMenu';
 import { subscribe } from './hack/rotate';
 import VideoWall from './components/videoWall';
 import KaffeWall from './components/kaffeWall';
+import Hallway from './components/hallway';
 import PingisWall from './components/pingisWall';
 import Instagram from './components/instagram';
 import { showKaffeWall } from './hack/showKaffeWall';
+import { showHallway } from './hack/showHallway';
 import { InfoButton } from './components/infoButton';
 import PluggWall from './components/pluggWall';
 
@@ -57,6 +59,7 @@ export default class academyVR_1 extends React.Component {
     })
     showKaffeWall(room);
     showFloorMenu(room);
+    showHallway(room);
 
   }
 
@@ -131,3 +134,4 @@ AppRegistry.registerComponent('PingisWall', () => PingisWall);
 AppRegistry.registerComponent('FloorMenu', () => FloorMenu);
 AppRegistry.registerComponent('Instagram', () => Instagram);
 AppRegistry.registerComponent('PluggWall', () => PluggWall);
+AppRegistry.registerComponent('Hallway', () => Hallway);
