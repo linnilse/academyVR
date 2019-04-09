@@ -6,6 +6,8 @@ import {
   View,
   VrButton,
   Animated,
+  Image,
+  asset
 } from 'react-360';
 import { subscribeHallway } from '../hack/showHallway';
 import Info from './info'
@@ -53,15 +55,20 @@ export default class Hallway extends React.Component {
     return (
       <View style={styles.panel}>
 
-        <View style={{ minHeight: 250, minWidth: 500, position: 'relative' }}>
+        <View style={{ minHeight: 500, minWidth: 640, position: 'relative' }}>
           {this.state.showHallwayText == false ? <View style={{ marginTop: 200 }}></View> :
 
             <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
               <VrButton onClick={this.handleToggleHallwayInfo.bind(this)}>
-                <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364' }}>
-                  <AnimatedText style={{ fontSize: this.animatedValue, color: '#fff' }}>
-                    Hallway är viktigt!
-          </AnimatedText>
+                <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364', display: "flex", flexDirection: 'row' }}>
+
+                  <Image style={{ width: 400, height: 300 }} source={asset('saga.jpg')} />
+                  <Text style={{ fontSize: 20, color: '#fff', width: 200, marginLeft: 20 }}>
+                    "Bättre kollegor än de jag har på Academy får man leta länge för att hitta...
+                    och troligtvis kommer man ändå inte hitta några som toppar dem.
+                    De gör min vardag till den bästa möjliga!"
+                      //Saga Edgren
+                  </Text>
                 </AnimatedView>
               </VrButton>
             </AnimatedView>

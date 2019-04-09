@@ -56,7 +56,7 @@ function init(bundle, parent, options = {}) {
   );
 
   //hallway i rum 1
-  const HallwayPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  const HallwayPanel = new Surface(1000, 1000, Surface.SurfaceShape.Flat);
   HallwayPanel.setAngle(-1.1, 0);
 
   r360.renderToSurface(
