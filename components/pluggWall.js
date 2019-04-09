@@ -6,6 +6,8 @@ import {
   View,
   VrButton,
   Animated,
+  Image,
+  asset
 } from 'react-360';
 import { subscribePluggWall } from '../hack/showPluggWall';
 import Info from './info';
@@ -40,7 +42,7 @@ export default class PluggWall extends React.Component {
         duration: 400
       }),
       Animated.timing(this.animatedValue2, {
-        toValue: 20,
+        toValue: 26,
         duration: 400
       })
     ]).start(() => {
@@ -61,17 +63,15 @@ export default class PluggWall extends React.Component {
     return (
       <View style={styles.panel}>
 
-        <View style={{ minHeight: 250, minWidth: 600, position: 'relative' }}>
-          {this.state.showPluggText == false ? <View style={{ marginTop: 200 }}></View> :
+        <View style={{ minHeight: 450, minWidth: 700, position: 'relative' }}>
+          {this.state.showPluggText == false ? <View style={{ marginTop: 0 }}></View> :
             <AnimatedView style={{ padding: this.animatedValue, backgroundColor: 'rgba(255, 255, 255, 0.4)', marginTop: 100, position: 'absolute', bottom: 0 }}>
               <VrButton onClick={this.handleTogglePluggInfo.bind(this)}>
                 <AnimatedView style={{ padding: this.animatedValue, backgroundColor: '#047364' }}>
-                  <AnimatedText style={{ fontSize: this.animatedValue, color: '#fff' }}>
-                    Plugg är bra
-                  </AnimatedText>
                   <AnimatedText style={{ fontSize: this.animatedValue2, color: '#fff' }}>
-                    Vinnare i år: JavaScript
+                    Här kan man också sitta och studera!
                   </AnimatedText>
+                  <Image style={{ width: 400, height: 300 }} source={asset('plugg.jpg')} />
                 </AnimatedView>
 
               </VrButton>

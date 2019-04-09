@@ -37,7 +37,7 @@ export default class Room1 extends React.Component {
   render() {
     return (
       <View style={styles.panel}>
-        <View>
+        <View style={styles.padding}>
           {/*  <Text style={styles.text}>
             Receptionen
           </Text> */}
@@ -46,7 +46,7 @@ export default class Room1 extends React.Component {
           onClick={this.PlayVideo.bind(this)}
           style={styles.padding}>
           <Info
-            translate={[0, -75, 0]}
+            translate={[0, -150, 0]}
           />
         </VrButton>
 

@@ -82,7 +82,7 @@ function init(bundle, parent, options = {}) {
     PingisWallPanel,
   );
   //pluggWall
-  const PluggWallPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  const PluggWallPanel = new Surface(1000, 1000, Surface.SurfaceShape.Flat);
   PluggWallPanel.setAngle(2, 0);
 
   r360.renderToSurface(
