@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import firebase from '../firebase';
 import {
   AppRegistry,
   StyleSheet,
@@ -15,6 +15,9 @@ import { InfoButton } from './infoButton';
 
 AppRegistry.registerComponent(...registerKeyboard);
 
+const rootRef = firebase.database().ref().child('react');
+const speedRef = rootRef.child('comparative');
+
 export default class Sentiment extends React.Component {
   constructor() {
     super();
@@ -22,6 +25,7 @@ export default class Sentiment extends React.Component {
       showSentiment: false,
       score: 0,
       comparative: 0,
+      total: [],
     }
   }
   onClickShowKeyboard() {
@@ -31,13 +35,9 @@ export default class Sentiment extends React.Component {
       tintColor: '#56b000'
     }).then(input => {
       console.log(input);
-      /*let { words } = this.state;
-      this.setState({ words: words });*/
       let words = input.split(/\W/);
-
       let scoredwords = [];
       let score2 = 0;
-      console.log(score2 / words.length);
 
       for (var i = 0; i < words.length; i++) {
         var word = words[i].toLowerCase();
@@ -47,15 +47,14 @@ export default class Sentiment extends React.Component {
         }
       }
 
-
       let { score } = this.state;
       let komp = score2 / words.length
 
       this.setState({
-        score: score2,
-        comparative: komp.toFixed(2)
+        score: score2
       });
 
+      speedRef.set(parseFloat(this.state.comparative) + parseFloat(komp.toFixed(2)));
     });
   }
 
@@ -66,7 +65,13 @@ export default class Sentiment extends React.Component {
   }
 
   componentDidMount() {
-    subscribeSentiment(this.handleToggleSentiment.bind(this))
+    subscribeSentiment(this.handleToggleSentiment.bind(this));
+    speedRef.on('value', snap => {
+      // console.log('comparative', snap.val());
+      this.setState({
+        comparative: snap.val()
+      })
+    })
   }
 
   render() {
