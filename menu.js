@@ -12,6 +12,7 @@ import { rotate } from './hack/rotate';
 import { showSentiment } from './hack/showSentiment';
 import { showVideoWall } from './hack/showVideoWall';
 import { showKaffeWall } from './hack/showKaffeWall';
+import { showVideoIntro } from './hack/showVideoIntro';
 import { showHallway } from './hack/showHallway';
 import { showFloorMenu } from './hack/showFloorMenu';
 import { showPingisWall } from './hack/showPingisWall';
@@ -36,6 +37,7 @@ export default class Menu extends React.Component {
     this.showRoom(room)
     showSentiment(room);
     showVideoWall(room);
+    showVideoIntro(room);
     showKaffeWall(room);
     showHallway(room);
     showPingisWall(room);

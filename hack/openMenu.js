@@ -5,6 +5,5 @@ export const subscribeMenu = (onMenu) => {
 };
 
 export const getMenu = () => {
-  console.log('rotate2')
   _onMenu();
 }

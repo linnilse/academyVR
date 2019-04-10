@@ -73,6 +73,15 @@ function init(bundle, parent, options = {}) {
     videoWallPanel,
   );
 
+  //VideoIntro 
+  const IntroPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
+  IntroPanel.setAngle(2.2, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('VideoIntro'),
+    IntroPanel,
+  );
+
   //PingisWall
   const PingisWallPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
   PingisWallPanel.setAngle(-3.1, 0);
