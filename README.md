@@ -21,9 +21,9 @@ that could help us in our project so much of what you see is experimentation whe
 After you have cloned the project you can install the dependencies by running  <pre> npm install </pre>  in your git bash.
 The installation will not work in the terminal that is in your code-editor.
 
-Once all the dependencies have installed you can run __npm start__ to see the project.
+Once all the dependencies have installed you can run <pre>npm start </pre> to see the project.
 
-In the file directory there is a __firebase.example.js__ file that you will have to fill in with your own info after you have created an app
+In the file directory there is a <pre><code> firebase.example.js </code></pre> file that you will have to fill in with your own info after you have created an app
 in firebase.
 This is only used in the sentiment analysis. If you don't wish to use it, you can remove the firebase dependencies.
 
