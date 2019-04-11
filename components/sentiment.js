@@ -6,7 +6,7 @@ import {
   Text,
   View,
   VrButton,
-  NativeModules
+  NativeModules,
 } from 'react-360';
 import { subscribeSentiment } from '../hack/showSentiment';
 import { registerKeyboard } from 'react-360-keyboard';
