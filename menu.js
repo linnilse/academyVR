@@ -18,6 +18,7 @@ import { showFloorMenu } from './communication/showFloorMenu';
 import { showPingisWall } from './communication/showPingisWall';
 import { showPluggWall } from './communication/showPluggWall';
 import { showInstagram } from './communication/showInstagram';
+import { showKlassen } from './communication/showKlassen';
 import { subscribeMenuShowRoom4 } from './communication/showRoom4';
 import { InfoButton } from './components/infoButton';
 export default class Menu extends React.Component {
@@ -44,6 +45,7 @@ export default class Menu extends React.Component {
     showPluggWall(room);
     showFloorMenu(room);
     showInstagram(room);
+    showKlassen(room);
 
     if (room === "Room1") {
       this.setState({

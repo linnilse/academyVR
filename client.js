@@ -64,6 +64,15 @@ function init(bundle, parent, options = {}) {
     HallwayPanel,
   );
 
+  //Klassen i guldägget
+  const KlassenPanel = new Surface(1000, 1000, Surface.SurfaceShape.Flat);
+  KlassenPanel.setAngle(-0.3, 0);
+
+  r360.renderToSurface(
+    r360.createRoot('Klassen'),
+    KlassenPanel,
+  );
+
   //videoWall
   const videoWallPanel = new Surface(1000, 600, Surface.SurfaceShape.Flat);
   videoWallPanel.setAngle(-3, 0);

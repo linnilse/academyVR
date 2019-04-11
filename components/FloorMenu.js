@@ -16,6 +16,7 @@ import { showKaffeWall } from '../communication/showKaffeWall';
 import { showVideoIntro } from '../communication/showVideoIntro';
 import { showHallway } from '../communication/showHallway';
 import { showInstagram } from '../communication/showInstagram';
+import { showKlassen } from '../communication/showKlassen';
 import { MenuShowRoom4 } from '../communication/showRoom4';
 
 export default class FloorMenu extends React.Component {
@@ -43,6 +44,7 @@ export default class FloorMenu extends React.Component {
     showVideoIntro(room);//så att VideoIntro inte syns i rum 4
     showHallway(room);//så att hallway inte syns i rum 4
     showInstagram(room);
+    showKlassen(room);
     MenuShowRoom4(room)
   }
 
