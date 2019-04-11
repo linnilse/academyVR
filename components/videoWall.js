@@ -13,7 +13,7 @@ import {
   staticResourceURL
 } from 'react-360';
 import VideoModule from 'VideoModule';
-import { subscribeVideo } from '../hack/showVideoWall';
+import { subscribeVideo } from '../communication/showVideoWall';
 export default class VideoWall extends React.Component {
   constructor() {
     super();

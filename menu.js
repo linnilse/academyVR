@@ -7,18 +7,18 @@ import {
   VrButton
 } from 'react-360';
 
-import { subscribeMenu } from './hack/openMenu';
-import { rotate } from './hack/rotate';
-import { showSentiment } from './hack/showSentiment';
-import { showVideoWall } from './hack/showVideoWall';
-import { showKaffeWall } from './hack/showKaffeWall';
-import { showVideoIntro } from './hack/showVideoIntro';
-import { showHallway } from './hack/showHallway';
-import { showFloorMenu } from './hack/showFloorMenu';
-import { showPingisWall } from './hack/showPingisWall';
-import { showPluggWall } from './hack/showPluggWall';
-import { showInstagram } from './hack/showInstagram';
-import { subscribeMenuShowRoom4 } from './hack/showRoom4';
+import { subscribeMenu } from './communication/openMenu';
+import { rotate } from './communication/rotate';
+import { showSentiment } from './communication/showSentiment';
+import { showVideoWall } from './communication/showVideoWall';
+import { showKaffeWall } from './communication/showKaffeWall';
+import { showVideoIntro } from './communication/showVideoIntro';
+import { showHallway } from './communication/showHallway';
+import { showFloorMenu } from './communication/showFloorMenu';
+import { showPingisWall } from './communication/showPingisWall';
+import { showPluggWall } from './communication/showPluggWall';
+import { showInstagram } from './communication/showInstagram';
+import { subscribeMenuShowRoom4 } from './communication/showRoom4';
 import { InfoButton } from './components/infoButton';
 export default class Menu extends React.Component {
   constructor() {

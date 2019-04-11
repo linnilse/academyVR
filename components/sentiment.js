@@ -8,7 +8,7 @@ import {
   VrButton,
   NativeModules,
 } from 'react-360';
-import { subscribeSentiment } from '../hack/showSentiment';
+import { subscribeSentiment } from '../communication/showSentiment';
 import { registerKeyboard } from 'react-360-keyboard';
 import { afinn } from './afinn111';
 import { InfoButton } from './infoButton';

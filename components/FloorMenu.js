@@ -9,14 +9,14 @@ import {
   Image,
   asset
 } from 'react-360';
-import { subscribeFloorMenu } from '../hack/showFloorMenu';
-import { rotate } from '../hack/rotate';
+import { subscribeFloorMenu } from '../communication/showFloorMenu';
+import { rotate } from '../communication/rotate';
 import Info from './info';
-import { showKaffeWall } from '../hack/showKaffeWall';
-import { showVideoIntro } from '../hack/showVideoIntro';
-import { showHallway } from '../hack/showHallway';
-import { showInstagram } from '../hack/showInstagram';
-import { MenuShowRoom4 } from '../hack/showRoom4';
+import { showKaffeWall } from '../communication/showKaffeWall';
+import { showVideoIntro } from '../communication/showVideoIntro';
+import { showHallway } from '../communication/showHallway';
+import { showInstagram } from '../communication/showInstagram';
+import { MenuShowRoom4 } from '../communication/showRoom4';
 
 export default class FloorMenu extends React.Component {
   constructor() {

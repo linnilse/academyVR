@@ -15,18 +15,18 @@ import Room4 from './components/room4'
 import Menu from './menu'
 import FloorMenu from './components/FloorMenu'
 import Sentiment from './components/sentiment'
-import { getMenu } from './hack/openMenu';
-import { showFloorMenu } from './hack/showFloorMenu';
-import { subscribe } from './hack/rotate';
+import { getMenu } from './communication/openMenu';
+import { showFloorMenu } from './communication/showFloorMenu';
+import { subscribe } from './communication/rotate';
 import VideoWall from './components/videoWall';
 import VideoIntro from './components/videoIntro';
 import KaffeWall from './components/kaffeWall';
 import Hallway from './components/hallway';
 import PingisWall from './components/pingisWall';
 import Instagram from './components/instagram';
-import { showKaffeWall } from './hack/showKaffeWall';
-import { showVideoIntro } from './hack/showVideoIntro';
-import { showHallway } from './hack/showHallway';
+import { showKaffeWall } from './communication/showKaffeWall';
+import { showVideoIntro } from './communication/showVideoIntro';
+import { showHallway } from './communication/showHallway';
 import { InfoButton } from './components/infoButton';
 import PluggWall from './components/pluggWall';
 

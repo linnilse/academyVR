@@ -8,7 +8,7 @@ import {
   Animated,
   Image,
 } from 'react-360';
-import { subscribeInstagram } from '../hack/showInstagram';
+import { subscribeInstagram } from '../communication/showInstagram';
 import Info from './info'
 
 const API = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=4413669213.c322287.daf23177d99b49c5b7db2df451de313d';
