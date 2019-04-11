@@ -3,7 +3,7 @@
 Linda Nilsson and Fitore Osmanaj
 
 Feel free to contact us if you have any questions: Linda: linda@linnil.se or Fitore: info@fitoreosmanaj.se
-# academyVR
+# ACADEMY360
 
 This is a demo where we used React webVR in order to present our school Academy in 360. The project is in Swedish but do feel free to have a look anyways.
 
@@ -23,7 +23,7 @@ The installation will not work in the terminal that is in your code-editor.
 
 Once all the dependencies have installed you can run npm start to see the project.
 
-In the file directory there is a firebase.example.js file that you will have to fill in with your own info after you have created an app
+In the file directory there is a "firebase.example.js" file that you will have to fill in with your own info after you have created an app
 in firebase.
 This is only used in the sentiment analysis. If you don't wish to use it, you can remove the firebase dependencies.
 
