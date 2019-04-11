@@ -25,7 +25,6 @@ export default class Sentiment extends React.Component {
       showSentiment: false,
       score: 0,
       comparative: 0,
-      total: [],
     }
   }
   onClickShowKeyboard() {
@@ -80,6 +79,7 @@ export default class Sentiment extends React.Component {
     if (this.state.showSentiment !== 'Room3') {
       return null;
     }
+
     return (
       <View style={styles.panel}>
 
@@ -99,7 +99,6 @@ export default class Sentiment extends React.Component {
           <View >
             <Text style={styles.placeholderText}>score:{this.state.score}</Text>
             <Text style={styles.placeholderText}>comparative:{this.state.comparative}</Text>
-            {/* <Text style={styles.placeholderText}>words:{this.state.words}</Text> */}
           </View>
         </View>
 
