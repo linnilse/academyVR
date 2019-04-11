@@ -9,7 +9,7 @@ import {
   Image,
   asset
 } from 'react-360';
-import { subscribePluggWall } from '../hack/showPluggWall';
+import { subscribePluggWall } from '../communication/showPluggWall';
 import Info from './info';
 export default class PluggWall extends React.Component {
   constructor() {

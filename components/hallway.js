@@ -9,7 +9,7 @@ import {
   Image,
   asset
 } from 'react-360';
-import { subscribeHallway } from '../hack/showHallway';
+import { subscribeHallway } from '../communication/showHallway';
 import Info from './info'
 export default class Hallway extends React.Component {
   constructor() {

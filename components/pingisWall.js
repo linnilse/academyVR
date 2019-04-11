@@ -7,7 +7,7 @@ import {
   VrButton,
   Animated,
 } from 'react-360';
-import { subscribePingisWall } from '../hack/showPingisWall';
+import { subscribePingisWall } from '../communication/showPingisWall';
 import Info from './info';
 import VideoModule from 'VideoModule';
 export default class PingisWall extends React.Component {

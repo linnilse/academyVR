@@ -7,7 +7,7 @@ import {
   VrButton,
   Animated,
 } from 'react-360';
-import { subscribeKaffe } from '../hack/showKaffeWall';
+import { subscribeKaffe } from '../communication/showKaffeWall';
 import Info from './info'
 export default class KaffeWall extends React.Component {
   constructor() {
