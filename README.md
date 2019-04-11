@@ -23,6 +23,7 @@ The installation will not work in the terminal that is in your code-editor.
 
 Once all the dependencies have installed you can run <pre>npm start </pre> to see the project.
 
+
 In the file directory there is a <pre><code> firebase.example.js </code></pre> file that you will have to fill in with your own info after you have created an app in firebase.
 This is only used in the sentiment analysis. If you don't wish to use it, you can remove the firebase dependencies.
 
