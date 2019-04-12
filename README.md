@@ -37,4 +37,4 @@ different components. You can find his work here: https://github.com/larkintucke
 
 # LIVEVERSION
 
-if you wish to see a liveversion of our project you can find it here: http://fitoreosmanaj.se/academyvr/index.html
+if you wish to see a liveversion of our project you can find it here: https://fitoreosmanaj.se/academyvr/index.html
