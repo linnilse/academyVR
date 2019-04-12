@@ -52,8 +52,8 @@ export default class Sentiment extends React.Component {
       this.setState({
         score: score2
       });
-
-      speedRef.set(parseFloat(this.state.comparative) + parseFloat(komp.toFixed(2)));
+      const newValue = parseFloat(this.state.comparative) + parseFloat(komp);
+      speedRef.set(newValue.toFixed(2));
     });
   }
 
